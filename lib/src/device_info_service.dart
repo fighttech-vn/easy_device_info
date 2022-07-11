@@ -10,14 +10,6 @@ class DeviceInfoService {
 
   Future<void> init() async {
     ///
-    /// final Locale deviceLocale = CountryCodes.getDeviceLocale();
-    /// print(deviceLocale.languageCode); // Displays en
-    /// print(deviceLocale.countryCode); // Displays US
-    ///
-    await CountryCodes.init();
-    final deviceLocale = CountryCodes.getDeviceLocale();
-
-    ///
     /// DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     /// AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
     /// print('Running on ${androidInfo.model}'); // e.g. "Moto G (4)"
@@ -29,8 +21,19 @@ class DeviceInfoService {
     ///
 
     final deviceInfo = DeviceInfoPlugin();
-    String? model, os;
-
+    String? model, os, countryCode, languageCode;
+    if (UniversalPlatform.isAndroid || UniversalPlatform.isIOS) {
+      ///
+      /// final Locale deviceLocale = CountryCodes.getDeviceLocale();
+      /// print(deviceLocale.languageCode); // Displays en
+      /// print(deviceLocale.countryCode); // Displays US
+      ///
+      await CountryCodes.init();
+      final deviceLocale = CountryCodes.getDeviceLocale();
+      countryCode = deviceLocale?.countryCode;
+      languageCode = deviceLocale?.languageCode;
+    }
+    
     if (UniversalPlatform.isAndroid) {
       final androidInfo = await deviceInfo.androidInfo;
       model = androidInfo.model;
@@ -42,8 +45,8 @@ class DeviceInfoService {
     }
 
     _infoModel = DeviceInfoModel(
-      countryCode: deviceLocale?.countryCode,
-      languageCode: deviceLocale?.languageCode,
+      countryCode: countryCode,
+      languageCode: languageCode,
       model: model,
       os: os,
     );
