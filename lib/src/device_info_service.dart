@@ -35,7 +35,7 @@ class DeviceInfoService {
       final androidInfo = await deviceInfo.androidInfo;
       model = androidInfo.model;
       os = androidInfo.version.baseOS;
-    } else {
+    } else if (UniversalPlatform.isIOS) {
       final iosInfo = await deviceInfo.iosInfo;
       model = iosInfo.model;
       os = '${iosInfo.utsname.machine}${iosInfo.utsname.version}';
