@@ -1,6 +1,10 @@
+import 'package:easy_device_info/easy_device_info.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DeviceInfoService().init();
+
   runApp(const MyApp());
 }
 
@@ -11,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Easy Device Info',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -95,9 +99,10 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+            const SizedBox(height: 10),
+            Text('countryCode: ${DeviceInfoService.info.countryCode}'),
+            Text('os: ${DeviceInfoService.info.os}'),
+            Text('model: ${DeviceInfoService.info.model}'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
