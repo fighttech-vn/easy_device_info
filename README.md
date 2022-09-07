@@ -10,3 +10,5 @@ Example:
 await DeviceInfoService().init();
 final countryCode = DeviceInfoService.info.countryCode ?? 'VN';
 ```
+
+![Alt text](screenshots/screenshot.png)

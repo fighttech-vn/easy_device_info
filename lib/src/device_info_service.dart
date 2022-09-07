@@ -1,5 +1,6 @@
 import 'package:country_codes/country_codes.dart';
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 import 'device_info_model.dart';
@@ -33,22 +34,36 @@ class DeviceInfoService {
       countryCode = deviceLocale?.countryCode;
       languageCode = deviceLocale?.languageCode;
     }
-    
+
     if (UniversalPlatform.isAndroid) {
       final androidInfo = await deviceInfo.androidInfo;
       model = androidInfo.model;
+
       os = androidInfo.version.baseOS;
     } else if (UniversalPlatform.isIOS) {
       final iosInfo = await deviceInfo.iosInfo;
       model = iosInfo.model;
+
       os = '${iosInfo.utsname.machine}${iosInfo.utsname.version}';
     }
+
+    //PackageInfo
+    final packageInfo = await PackageInfo.fromPlatform();
+
+    String appName = packageInfo.appName;
+    String packageName = packageInfo.packageName;
+    String version = packageInfo.version;
+    String buildNumber = packageInfo.buildNumber;
 
     _infoModel = DeviceInfoModel(
       countryCode: countryCode,
       languageCode: languageCode,
       model: model,
       os: os,
+      appName: appName,
+      packageName: packageName,
+      version: version,
+      buildNumber: buildNumber,
     );
   }
 }
