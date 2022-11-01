@@ -57,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text('os: \t\t${DeviceInfoService.info.os}'),
                 Text('model: \t\t${DeviceInfoService.info.model}'),
                 Text('appVersion: \t\t${DeviceInfoService.info.appVersion}'),
+                Text('id: \t\t${DeviceInfoService.info.id}'),
               ],
             ),
           );

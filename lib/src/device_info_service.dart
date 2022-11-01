@@ -22,7 +22,7 @@ class DeviceInfoService {
     ///
 
     final deviceInfo = DeviceInfoPlugin();
-    String? model, os, countryCode, languageCode;
+    String? model, os, countryCode, languageCode, id;
     if (UniversalPlatform.isAndroid || UniversalPlatform.isIOS) {
       ///
       /// final Locale deviceLocale = CountryCodes.getDeviceLocale();
@@ -40,14 +40,16 @@ class DeviceInfoService {
       model = androidInfo.model;
 
       os = androidInfo.version.baseOS;
+      id = androidInfo.id;
     } else if (UniversalPlatform.isIOS) {
       final iosInfo = await deviceInfo.iosInfo;
       model = iosInfo.model;
 
       os = '${iosInfo.utsname.machine}${iosInfo.utsname.version}';
+      id = iosInfo.identifierForVendor;
     }
 
-    //PackageInfo
+    // package_info_plus
     final packageInfo = await PackageInfo.fromPlatform();
 
     String appName = packageInfo.appName;
@@ -64,6 +66,7 @@ class DeviceInfoService {
       packageName: packageName,
       version: version,
       buildNumber: buildNumber,
+      id: id,
     );
   }
 }
