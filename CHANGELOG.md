@@ -1,6 +1,9 @@
-## 0.0.4
+## 0.0.7
++ Add screenshot pub.dev
 
+## 0.0.4
 + feat(PackageInfo): Support get app version code and version name
+
 ## 0.0.2
 
 + feat(Desktop): fix runtime issue mac os 
