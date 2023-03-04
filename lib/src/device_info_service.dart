@@ -23,6 +23,7 @@ class DeviceInfoService {
 
     final deviceInfo = DeviceInfoPlugin();
     String? model, os, countryCode, languageCode, id;
+    int? androidSdkInt;
     if (UniversalPlatform.isAndroid || UniversalPlatform.isIOS) {
       ///
       /// final Locale deviceLocale = CountryCodes.getDeviceLocale();
@@ -41,6 +42,7 @@ class DeviceInfoService {
 
       os = androidInfo.version.baseOS;
       id = androidInfo.id;
+      androidSdkInt = androidInfo.version.sdkInt;
     } else if (UniversalPlatform.isIOS) {
       final iosInfo = await deviceInfo.iosInfo;
       model = iosInfo.model;
@@ -67,6 +69,7 @@ class DeviceInfoService {
       version: version,
       buildNumber: buildNumber,
       id: id,
+      androidSdkInt: androidSdkInt,
     );
   }
 }
