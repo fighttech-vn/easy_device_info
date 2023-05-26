@@ -1,3 +1,9 @@
+## 0.0.10
+Support build `flutter 3.10`
+
+## 0.0.9
++ Add get Android version
+
 ## 0.0.7
 + Add screenshot pub.dev
 
