@@ -1,6 +1,6 @@
 name: easy_device_info
 description: Easy get Device Info Not need request any permission form user device.
-version: 0.0.10
+version: 0.0.11
 homepage: https://github.com/FightTech-VN/easy_device_info
 screenshots:
  - description: 'Easy get device information.'
@@ -19,6 +19,7 @@ dependencies:
   package_info_plus: ^4.0.1
 
   universal_platform: ^1.0.0+1
+  http: ">=0.13.5 <2.0.0"
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,6 @@
+## 0.0.11
+Allow `http` library old version and `1.0.0` (http: ">=0.13.5 <2.0.0")
+
 ## 0.0.10
 Support build `flutter 3.10`
 
