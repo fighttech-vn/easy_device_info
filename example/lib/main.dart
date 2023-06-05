@@ -13,11 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Easy Device Info',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'easy_device_info'),
     );
   }
 }
@@ -49,16 +48,25 @@ class _MyHomePageState extends State<MyHomePage> {
           }
 
           return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const SizedBox(height: 10),
-                Text('countryCode: \t\t${DeviceInfoService.info.countryCode}'),
-                Text('os: \t\t${DeviceInfoService.info.os}'),
-                Text('model: \t\t${DeviceInfoService.info.model}'),
-                Text('appVersion: \t\t${DeviceInfoService.info.appVersion}'),
-                Text('id: \t\t${DeviceInfoService.info.id}'),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const SizedBox(height: 10),
+                  Text('locale: \t\t${DeviceInfoService.info.locale}'),
+                  Text('languages: \t\t${DeviceInfoService.info.languages}'),
+                  const Divider(),
+                  Text(
+                      'countryCode: \t\t${DeviceInfoService.info.countryCode}'),
+                  const Divider(),
+                  Text('os: \t\t${DeviceInfoService.info.os}'),
+                  Text('model: \t\t${DeviceInfoService.info.model}'),
+                  const Divider(),
+                  Text('appVersion: \t\t${DeviceInfoService.info.appVersion}'),
+                  Text('id: \t\t${DeviceInfoService.info.id}'),
+                ],
+              ),
             ),
           );
         },

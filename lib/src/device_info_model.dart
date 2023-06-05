@@ -1,4 +1,9 @@
 class DeviceInfoModel {
+  /// locale
+  final List<dynamic>? languages;
+  final String? locale;
+
+  ///
   final String? countryCode;
   final String? languageCode;
 
@@ -15,6 +20,8 @@ class DeviceInfoModel {
   final int? androidSdkInt;
 
   DeviceInfoModel({
+    this.languages,
+    this.locale,
     this.countryCode,
     this.languageCode,
     this.model,
