@@ -1,5 +1,6 @@
 import 'package:country_codes/country_codes.dart';
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:devicelocale/devicelocale.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:universal_platform/universal_platform.dart';
 
@@ -54,12 +55,18 @@ class DeviceInfoService {
     // package_info_plus
     final packageInfo = await PackageInfo.fromPlatform();
 
-    String appName = packageInfo.appName;
-    String packageName = packageInfo.packageName;
-    String version = packageInfo.version;
-    String buildNumber = packageInfo.buildNumber;
+    final String appName = packageInfo.appName;
+    final String packageName = packageInfo.packageName;
+    final String version = packageInfo.version;
+    final String buildNumber = packageInfo.buildNumber;
 
+    ///
+    final List<dynamic>? languages = await Devicelocale.preferredLanguages;
+    final String? locale = await Devicelocale.currentLocale;
+    
     _infoModel = DeviceInfoModel(
+      languages: languages,
+      locale: locale,
       countryCode: countryCode,
       languageCode: languageCode,
       model: model,

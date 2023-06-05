@@ -1,3 +1,6 @@
+## 0.0.13
++ Support get device locale and device lanuage.
+
 ## 0.0.11
 Allow `http` library old version and `1.0.0` (http: ">=0.13.5 <2.0.0")
 
