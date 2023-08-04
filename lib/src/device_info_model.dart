@@ -9,6 +9,7 @@ class DeviceInfoModel {
 
   final String? model;
   final String? os;
+  final String? platform;
 
   // package info
   final String? appName;
@@ -26,6 +27,7 @@ class DeviceInfoModel {
     this.languageCode,
     this.model,
     this.os,
+    this.platform,
     this.appName,
     this.packageName,
     this.version,

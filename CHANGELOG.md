@@ -1,3 +1,6 @@
+## 0.0.14
++ Support get Platform
+
 ## 0.0.13
 + Support get device locale and device lanuage.
 

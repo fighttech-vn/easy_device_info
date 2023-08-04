@@ -36,6 +36,7 @@ class DeviceInfoService {
       countryCode = deviceLocale?.countryCode;
       languageCode = deviceLocale?.languageCode;
     }
+    var platform = 'unknow';
 
     if (UniversalPlatform.isAndroid) {
       final androidInfo = await deviceInfo.androidInfo;
@@ -44,12 +45,14 @@ class DeviceInfoService {
       os = androidInfo.version.baseOS;
       id = androidInfo.id;
       androidSdkInt = androidInfo.version.sdkInt;
+      platform = 'Android';
     } else if (UniversalPlatform.isIOS) {
       final iosInfo = await deviceInfo.iosInfo;
       model = iosInfo.model;
 
       os = '${iosInfo.utsname.machine}${iosInfo.utsname.version}';
       id = iosInfo.identifierForVendor;
+      platform = 'iOS';
     }
 
     // package_info_plus
@@ -63,7 +66,7 @@ class DeviceInfoService {
     ///
     final List<dynamic>? languages = await Devicelocale.preferredLanguages;
     final String? locale = await Devicelocale.currentLocale;
-    
+
     _infoModel = DeviceInfoModel(
       languages: languages,
       locale: locale,
@@ -71,6 +74,7 @@ class DeviceInfoService {
       languageCode: languageCode,
       model: model,
       os: os,
+      platform: platform,
       appName: appName,
       packageName: packageName,
       version: version,
