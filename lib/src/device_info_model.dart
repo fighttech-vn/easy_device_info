@@ -19,6 +19,7 @@ class DeviceInfoModel {
 
   final String? id;
   final int? androidSdkInt;
+  final String? identifier;
 
   DeviceInfoModel({
     this.languages,
@@ -34,6 +35,7 @@ class DeviceInfoModel {
     this.buildNumber,
     this.id,
     this.androidSdkInt,
+    this.identifier,
   });
 }
 

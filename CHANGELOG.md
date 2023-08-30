@@ -1,3 +1,6 @@
+## 1.0.0
++ Add param identifier for Android and iOS inique in device.
+
 ## 0.0.14
 + Support get Platform
 

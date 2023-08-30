@@ -2,6 +2,7 @@ import 'package:country_codes/country_codes.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:devicelocale/devicelocale.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:unique_identifier/unique_identifier.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 import 'device_info_model.dart';
@@ -67,6 +68,8 @@ class DeviceInfoService {
     final List<dynamic>? languages = await Devicelocale.preferredLanguages;
     final String? locale = await Devicelocale.currentLocale;
 
+    final identifier = await UniqueIdentifier.serial;
+
     _infoModel = DeviceInfoModel(
       languages: languages,
       locale: locale,
@@ -81,6 +84,7 @@ class DeviceInfoService {
       buildNumber: buildNumber,
       id: id,
       androidSdkInt: androidSdkInt,
+      identifier: identifier,
     );
   }
 }
