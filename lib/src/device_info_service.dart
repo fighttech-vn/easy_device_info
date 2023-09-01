@@ -26,6 +26,9 @@ class DeviceInfoService {
     final deviceInfo = DeviceInfoPlugin();
     String? model, os, countryCode, languageCode, id;
     int? androidSdkInt;
+
+    String? identifier = 'identifier-value';
+
     if (UniversalPlatform.isAndroid || UniversalPlatform.isIOS) {
       ///
       /// final Locale deviceLocale = CountryCodes.getDeviceLocale();
@@ -33,10 +36,14 @@ class DeviceInfoService {
       /// print(deviceLocale.countryCode); // Displays US
       ///
       await CountryCodes.init();
+
       final deviceLocale = CountryCodes.getDeviceLocale();
       countryCode = deviceLocale?.countryCode;
       languageCode = deviceLocale?.languageCode;
+
+      identifier = await UniqueIdentifier.serial;
     }
+
     var platform = 'unknow';
 
     if (UniversalPlatform.isAndroid) {
@@ -67,8 +74,6 @@ class DeviceInfoService {
     ///
     final List<dynamic>? languages = await Devicelocale.preferredLanguages;
     final String? locale = await Devicelocale.currentLocale;
-
-    final identifier = await UniqueIdentifier.serial;
 
     _infoModel = DeviceInfoModel(
       languages: languages,

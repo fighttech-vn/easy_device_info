@@ -1,3 +1,6 @@
+## 1.0.1
++ Add param identifier fix build web
+
 ## 1.0.0
 + Add param identifier for Android and iOS inique in device.
 
