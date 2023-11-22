@@ -1,5 +1,8 @@
+## 1.0.2
++ Upgrade libraries build on flutter 3.16.0
+
 ## 1.0.1
-+ Add param identifier fix build web
++ Add param identifier fix build web (flutter 3.13.9)
 
 ## 1.0.0
 + Add param identifier for Android and iOS inique in device.
