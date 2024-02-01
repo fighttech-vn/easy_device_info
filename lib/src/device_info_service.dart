@@ -2,7 +2,6 @@ import 'package:country_codes/country_codes.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:devicelocale/devicelocale.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:unique_identifier/unique_identifier.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 import 'device_info_model.dart';
@@ -41,8 +40,6 @@ class DeviceInfoService {
       final deviceLocale = CountryCodes.getDeviceLocale();
       countryCode = deviceLocale?.countryCode;
       languageCode = deviceLocale?.languageCode;
-
-      identifier = await UniqueIdentifier.serial;
     }
 
     var platform = 'unknow';
@@ -58,6 +55,7 @@ class DeviceInfoService {
 
       deviceName = androidInfo.model;
       deviceOsVersion = androidInfo.version.release;
+      identifier = androidInfo.id;
     } else if (UniversalPlatform.isIOS) {
       final iosInfo = await deviceInfo.iosInfo;
       model = iosInfo.model;
@@ -68,6 +66,7 @@ class DeviceInfoService {
 
       deviceName = iosInfo.name;
       deviceOsVersion = iosInfo.systemVersion;
+      identifier = iosInfo.identifierForVendor;
     }
 
     // package_info_plus
