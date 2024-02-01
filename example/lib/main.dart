@@ -66,6 +66,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('appVersion: \t\t${DeviceInfoService.info.appVersion}'),
                   Text('id: \t\t${DeviceInfoService.info.id}'),
                   Text('identifier: \t\t${DeviceInfoService.info.identifier}'),
+                  const Divider(),
+                  Text('deviceName: \t\t${DeviceInfoService.info.deviceName}'),
+                  Text(
+                    'deviceOsVersion:${DeviceInfoService.info.deviceOsVersion}',
+                  ),
                 ],
               ),
             ),

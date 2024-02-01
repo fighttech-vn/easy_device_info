@@ -1,3 +1,6 @@
+## 1.0.3
++ Add param deviceName & deviceOsVersion for Android & iOS
+
 ## 1.0.2
 + Upgrade libraries build on flutter 3.16.0
 
