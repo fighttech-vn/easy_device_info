@@ -16,10 +16,13 @@ class DeviceInfoModel {
   final String? packageName;
   final String? version;
   final String? buildNumber;
-
+  
   final String? id;
   final int? androidSdkInt;
   final String? identifier;
+
+  final String? deviceName;
+  final String? deviceOsVersion;
 
   DeviceInfoModel({
     this.languages,
@@ -36,6 +39,8 @@ class DeviceInfoModel {
     this.id,
     this.androidSdkInt,
     this.identifier,
+    this.deviceName,
+    this.deviceOsVersion,
   });
 }
 

@@ -25,6 +25,7 @@ class DeviceInfoService {
 
     final deviceInfo = DeviceInfoPlugin();
     String? model, os, countryCode, languageCode, id;
+    String? deviceName, deviceOsVersion;
     int? androidSdkInt;
 
     String? identifier = 'identifier-value';
@@ -54,6 +55,9 @@ class DeviceInfoService {
       id = androidInfo.id;
       androidSdkInt = androidInfo.version.sdkInt;
       platform = 'Android';
+
+      deviceName = androidInfo.model;
+      deviceOsVersion = androidInfo.version.release;
     } else if (UniversalPlatform.isIOS) {
       final iosInfo = await deviceInfo.iosInfo;
       model = iosInfo.model;
@@ -61,6 +65,9 @@ class DeviceInfoService {
       os = '${iosInfo.utsname.machine}${iosInfo.utsname.version}';
       id = iosInfo.identifierForVendor;
       platform = 'iOS';
+
+      deviceName = iosInfo.name;
+      deviceOsVersion = iosInfo.systemVersion;
     }
 
     // package_info_plus
@@ -90,6 +97,8 @@ class DeviceInfoService {
       id: id,
       androidSdkInt: androidSdkInt,
       identifier: identifier,
+      deviceName: deviceName,
+      deviceOsVersion: deviceOsVersion,
     );
   }
 }
