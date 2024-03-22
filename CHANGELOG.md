@@ -1,3 +1,7 @@
+## 1.0.5
+
+- Upgrade package `package_info_plus` to ^6.0.0
+
 ## 1.0.4
 
 - Remove package `unique_identifier`

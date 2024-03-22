@@ -1,6 +1,6 @@
 name: easy_device_info
 description: Easy get Device Info Not need request any permission form user device.
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/FightTech-VN/easy_device_info
 screenshots:
   - description: "Easy get device information."
@@ -16,7 +16,7 @@ dependencies:
 
   country_codes: ^2.2.0
   device_info_plus: ^9.1.1
-  package_info_plus: ^5.0.1
+  package_info_plus: ^6.0.0
   # unique_identifier: ^0.3.0
 
   devicelocale: ^0.7.0
