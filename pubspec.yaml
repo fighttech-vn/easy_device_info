@@ -16,7 +16,7 @@ dependencies:
 
   country_codes: ^2.2.0
   device_info_plus: ^9.1.1
-  package_info_plus: ^5.0.1
+  package_info_plus: ^6.0.0
   # unique_identifier: ^0.3.0
 
   devicelocale: ^0.7.0
