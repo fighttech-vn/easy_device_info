@@ -1,4 +1,8 @@
-## 1.1.2
+# 1.1.3
++ Support build web wasm
+
+------
+# 1.1.2
 - Fix build new Android Gradle 8.x `country_codes: ^3.1.0+2`
 
 ## 1.0.5
