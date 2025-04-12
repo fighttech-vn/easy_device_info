@@ -1,3 +1,6 @@
+import 'package:flutter/foundation.dart';
+
+@immutable
 class DeviceInfoModel {
   /// locale
   final List<dynamic>? languages;
@@ -16,7 +19,7 @@ class DeviceInfoModel {
   final String? packageName;
   final String? version;
   final String? buildNumber;
-  
+
   final String? id;
   final int? androidSdkInt;
   final String? identifier;
@@ -24,7 +27,7 @@ class DeviceInfoModel {
   final String? deviceName;
   final String? deviceOsVersion;
 
-  DeviceInfoModel({
+  const DeviceInfoModel({
     this.languages,
     this.locale,
     this.countryCode,
@@ -42,6 +45,26 @@ class DeviceInfoModel {
     this.deviceName,
     this.deviceOsVersion,
   });
+
+  Map<String, dynamic> toJson() {
+    final device = this;
+    return {
+      'id': device.id,
+      'model': device.model,
+      'os': device.os,
+      'platform': device.platform,
+      'appName': device.appName,
+      'packageName': device.packageName,
+      'version': device.version,
+      'buildNumber': device.buildNumber,
+      'androidSdkInt': device.androidSdkInt,
+      'identifier': device.identifier,
+      'deviceName': device.deviceName,
+      'deviceOsVersion': device.deviceOsVersion,
+      'countryCode': device.countryCode,
+      'languageCode': device.languageCode,
+    };
+  }
 }
 
 extension DeviceInfoModelExt on DeviceInfoModel {
