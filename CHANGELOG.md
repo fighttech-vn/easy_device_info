@@ -1,3 +1,6 @@
+# 1.1.4
+* Fix example run Flutter 3.29
+
 # 1.1.3
 + Support build web wasm
 
