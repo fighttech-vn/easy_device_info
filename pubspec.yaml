@@ -14,9 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  country_codes: #^3.3.0
-    git:
-      url: https://github.com/miguelpruivo/country_codes
+  country_codes: ^3.3.0
   device_info_plus: ^11.3.3
   package_info_plus: ^8.3.0
   # unique_identifier: ^0.3.0
