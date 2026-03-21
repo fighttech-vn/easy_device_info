@@ -1,3 +1,6 @@
+## 1.1.5
+* Update `device_info_plus: "^12.1.0"`
+
 # 1.1.4
 * Fix example run Flutter 3.29
 
