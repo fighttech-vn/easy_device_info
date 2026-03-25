@@ -1,3 +1,8 @@
+## 1.1
+
+## 1.1.6
+* Update `package_info_plus: ^9.0.0`
+
 ## 1.1.5
 * Update `device_info_plus: "^12.1.0"`
 
