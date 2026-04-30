@@ -2,6 +2,7 @@
 
 import 'package:easy_device_info/easy_device_info.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -75,6 +76,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text(
                     'deviceOsVersion:${DeviceInfoService.info?.deviceOsVersion}',
                   ),
+                  GestureDetector(
+                    onTap: () {
+                      copyTextSnackBar(
+                          DeviceInfoService.info?.data.toString() ?? '',
+                          context: context);
+                    },
+                    child: Text(
+                      'raw data: ${DeviceInfoService.info?.data}',
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -83,4 +94,19 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+void copyTextSnackBar(String? text, {BuildContext? context}) {
+  Clipboard.setData(ClipboardData(text: text ?? '')).then((value) {
+    if (context != null && context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Copied'),
+          duration: Duration(seconds: 2),
+          behavior:
+              SnackBarBehavior.floating, // Makes it look more like a toast
+        ),
+      );
+    }
+  });
 }
