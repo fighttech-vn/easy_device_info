@@ -1,5 +1,8 @@
 ## 1.1
 
+## 1.1.7
++ Expose data raw value Map `data`
+
 ## 1.1.6
 * Update `package_info_plus: ^9.0.0`
 
