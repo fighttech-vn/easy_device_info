@@ -27,6 +27,8 @@ class DeviceInfoModel {
   final String? deviceName;
   final String? deviceOsVersion;
 
+  final Map<String, dynamic>? data;
+
   const DeviceInfoModel({
     this.languages,
     this.locale,
@@ -44,6 +46,7 @@ class DeviceInfoModel {
     this.identifier,
     this.deviceName,
     this.deviceOsVersion,
+    this.data,
   });
 
   Map<String, dynamic> toJson() {
@@ -63,6 +66,7 @@ class DeviceInfoModel {
       'deviceOsVersion': device.deviceOsVersion,
       'countryCode': device.countryCode,
       'languageCode': device.languageCode,
+      'data': device.data,
     };
   }
 }

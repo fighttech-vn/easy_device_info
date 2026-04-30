@@ -7,8 +7,8 @@ import 'package:universal_platform/universal_platform.dart';
 import 'device_info_model.dart';
 
 class DeviceInfoService {
-  static late DeviceInfoModel _infoModel;
-  static DeviceInfoModel info = _infoModel;
+  static DeviceInfoModel? _infoModel;
+  static DeviceInfoModel? info = _infoModel;
 
   Future<void> init() async {
     ///
@@ -43,6 +43,7 @@ class DeviceInfoService {
     }
 
     var platform = 'unknow';
+    Map<String, dynamic>? data;
 
     if (UniversalPlatform.isAndroid) {
       final androidInfo = await deviceInfo.androidInfo;
@@ -56,6 +57,7 @@ class DeviceInfoService {
       deviceName = androidInfo.model;
       deviceOsVersion = androidInfo.version.release;
       identifier = androidInfo.id;
+      data = androidInfo.data;
     } else if (UniversalPlatform.isIOS) {
       final iosInfo = await deviceInfo.iosInfo;
       model = iosInfo.model;
@@ -67,8 +69,8 @@ class DeviceInfoService {
       deviceName = iosInfo.name;
       deviceOsVersion = iosInfo.systemVersion;
       identifier = iosInfo.identifierForVendor;
+      data = iosInfo.data;
     }
-
     // package_info_plus
     final packageInfo = await PackageInfo.fromPlatform();
 
@@ -98,6 +100,7 @@ class DeviceInfoService {
       identifier: identifier,
       deviceName: deviceName,
       deviceOsVersion: deviceOsVersion,
+      data: data,
     );
   }
 }

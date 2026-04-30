@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:easy_device_info/easy_device_info.dart';
 import 'package:flutter/material.dart';
 
@@ -54,22 +56,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const SizedBox(height: 10),
-                  Text('locale: \t\t${DeviceInfoService.info.locale}'),
-                  Text('languages: \t\t${DeviceInfoService.info.languages}'),
+                  Text('locale: \t\t${DeviceInfoService.info?.locale}'),
+                  Text('languages: \t\t${DeviceInfoService.info?.languages}'),
                   const Divider(),
                   Text(
-                      'countryCode: \t\t${DeviceInfoService.info.countryCode}'),
+                      'countryCode: \t\t${DeviceInfoService.info?.countryCode}'),
                   const Divider(),
-                  Text('os: \t\t${DeviceInfoService.info.os}'),
-                  Text('model: \t\t${DeviceInfoService.info.model}'),
-                  const Divider(),
-                  Text('appVersion: \t\t${DeviceInfoService.info.appVersion}'),
-                  Text('id: \t\t${DeviceInfoService.info.id}'),
-                  Text('identifier: \t\t${DeviceInfoService.info.identifier}'),
-                  const Divider(),
-                  Text('deviceName: \t\t${DeviceInfoService.info.deviceName}'),
+                  Text('os: \t\t${DeviceInfoService.info?.os}'),
                   Text(
-                    'deviceOsVersion:${DeviceInfoService.info.deviceOsVersion}',
+                      'deviceOsVersion: \t\t${DeviceInfoService.info?.deviceOsVersion}'),
+                  Text('model: \t\t${DeviceInfoService.info?.model}'),
+                  const Divider(),
+                  Text('appVersion: \t\t${DeviceInfoService.info?.appVersion}'),
+                  Text('id: \t\t${DeviceInfoService.info?.id}'),
+                  Text('identifier: \t\t${DeviceInfoService.info?.identifier}'),
+                  const Divider(),
+                  Text('deviceName: \t\t${DeviceInfoService.info?.deviceName}'),
+                  Text(
+                    'deviceOsVersion:${DeviceInfoService.info?.deviceOsVersion}',
                   ),
                 ],
               ),
