@@ -57,11 +57,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const SizedBox(height: 10),
-                  Text('locale: \t\t${DeviceInfoService.info?.locale}'),
-                  Text('languages: \t\t${DeviceInfoService.info?.languages}'),
+                  Text(
+                      'packageName: \t\t${DeviceInfoService.info?.packageName}'),
+                  Text('version: \t\t${DeviceInfoService.info?.version}'),
+                  Text('appVersion: \t\t${DeviceInfoService.info?.appVersion}'),
                   const Divider(),
                   Text(
                       'countryCode: \t\t${DeviceInfoService.info?.countryCode}'),
+                  Text('locale: \t\t${DeviceInfoService.info?.locale}'),
+                  Text('languages: \t\t${DeviceInfoService.info?.languages}'),
                   const Divider(),
                   Text('os: \t\t${DeviceInfoService.info?.os}'),
                   Text(
