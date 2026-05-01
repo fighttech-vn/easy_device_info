@@ -1,5 +1,8 @@
 ## 1.1
 
+## 1.1.8
++ Dynamic version `device_info_plus: any`
+
 ## 1.1.7
 + Expose data raw value Map `data`
 
