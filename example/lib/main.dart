@@ -72,7 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       'deviceOsVersion: \t\t${DeviceInfoService.info?.deviceOsVersion}'),
                   Text('model: \t\t${DeviceInfoService.info?.model}'),
                   const Divider(),
-                  Text('appVersion: \t\t${DeviceInfoService.info?.appVersion}'),
                   Text('id: \t\t${DeviceInfoService.info?.id}'),
                   Text('identifier: \t\t${DeviceInfoService.info?.identifier}'),
                   const Divider(),
